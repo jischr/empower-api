@@ -1,2 +1,2 @@
-class CliniciansController < ApplicationController
+class V1::CliniciansController < ApplicationController
 end

@@ -22,3 +22,17 @@ User.create(
   phone_number: '3035889350',
   password: 'password',
   password_confirmation: 'password')
+
+Measure.create(
+  name: 'Beck Depression Inventory - Short Form'
+)
+
+Alternative.create(
+  user_id: 1,
+  text: 'Take a walk'
+)
+
+Alternative.create(
+  user_id: 1,
+  text: 'Drink a cup of tea'
+)

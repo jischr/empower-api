@@ -1,2 +1,2 @@
-class QuestionsController < ApplicationController
+class V1::QuestionsController < ApplicationController
 end

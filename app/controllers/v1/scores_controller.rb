@@ -1,2 +1,2 @@
-class ScoresController < ApplicationController
+class V1::ScoresController < ApplicationController
 end
