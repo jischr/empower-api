@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  belongs_to :clinician
+  belongs_to :clinician, optional: true
 
   has_many :scores
   has_many :alternatives
