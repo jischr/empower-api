@@ -1,0 +1,2 @@
+class AlternativesController < ApplicationController
+end

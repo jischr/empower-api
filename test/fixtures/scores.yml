@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  measure: one
+  score: 1
+  date: 2017-06-22
+  time: 2017-06-22 20:11:22
+
+two:
+  user: two
+  measure: two
+  score: 1
+  date: 2017-06-22
+  time: 2017-06-22 20:11:22
