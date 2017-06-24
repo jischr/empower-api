@@ -5,7 +5,7 @@ class AuthenticationController < ApplicationController
     command = AuthenticateUser.call(params[:email], params[:password])
 
     if command.success?
-      render json: { auth_token: command.result }
+      render json: { auth_token: command.result, who: u }
     else
       render json: { error: command.errors }
     end
@@ -15,7 +15,7 @@ class AuthenticationController < ApplicationController
     command = AuthenticateClinician.call(params[:email], params[:password])
 
     if command.success?
-      render json: { auth_token: command.result }
+      render json: { auth_token: command.result, who: c }
     else
       render json: { error: command.errors }
     end
