@@ -1,6 +1,6 @@
 class AuthenticateClinician
   prepend SimpleCommand
-  attr_accessor :email, :password, :id
+  attr_accessor :email, :password, :id, :first_name
 
   def initialize(email, password)
     @email = email
@@ -14,6 +14,7 @@ class AuthenticateClinician
   def clinician
     clinician = Clinician.find_by_email(email)
     @id = clinician.id
+    @first_name = clincian.first_name
     return clinician if clinician && clinician.authenticate(password)
 
     errors.add :clinician_authentication, 'invalid credentials'
