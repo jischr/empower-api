@@ -12,7 +12,7 @@ class AuthenticateClinician
 
   private
 
-  attr_accessor :email, :password
+  attr_accessor :email, :password, :clinician_id
 
   def clinician
     clinician = Clinician.find_by_email(email)
