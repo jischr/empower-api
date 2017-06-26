@@ -1,5 +1,6 @@
 class AuthenticateClinician
   prepend SimpleCommand
+  attr_accessor :email, :password, :id
 
   def initialize(email, password)
     @email = email
@@ -10,12 +11,9 @@ class AuthenticateClinician
     JsonWebToken.encode(clinician_id: clinician.id) if clinician
   end
 
-  private
-
-  attr_accessor :email, :password, :clinician_id
-
   def clinician
     clinician = Clinician.find_by_email(email)
+    @id = clinician.id
     return clinician if clinician && clinician.authenticate(password)
 
     errors.add :clinician_authentication, 'invalid credentials'
