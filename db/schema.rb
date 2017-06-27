@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 20170623021141) do
   create_table "scores", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "measure_id"
-    t.integer "score"
+    t.integer "score_value"
     t.date "date"
     t.time "time"
     t.datetime "created_at", null: false
