@@ -4,11 +4,6 @@ class V1::UsersController < ApplicationController
 
   skip_before_action :authenticate_request, :includes => [:create]
 
-  def index
-    @users = User.all
-    render json: @users
-  end
-
   def show
     @user = User.find(params[:id]).as_json(include: {alternatives: {only: [:id, :text]}}, except: :password_digest)
     render json: @user

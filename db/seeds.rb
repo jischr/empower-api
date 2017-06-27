@@ -21,7 +21,8 @@ User.create(
   patient_number: '1234',
   phone_number: '3035889350',
   password: 'password',
-  password_confirmation: 'password')
+  password_confirmation: 'password',
+  clinician_id: 1)
 
 Measure.create(
   name: 'PHQ-9'
