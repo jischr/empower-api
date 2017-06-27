@@ -14,7 +14,7 @@ class AuthenticateClinician
   def clinician
     clinician = Clinician.find_by_email(email)
     @id = clinician.id
-    @first_name = clincian.first_name
+    @first_name = clinician.first_name
     return clinician if clinician && clinician.authenticate(password)
 
     errors.add :clinician_authentication, 'invalid credentials'
