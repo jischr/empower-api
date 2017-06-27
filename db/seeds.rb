@@ -24,7 +24,11 @@ User.create(
   password_confirmation: 'password')
 
 Measure.create(
-  name: 'Beck Depression Inventory - Short Form'
+  name: 'PHQ-9'
+)
+
+Measure.create(
+  name: 'GAD-7'
 )
 
 Alternative.create(
