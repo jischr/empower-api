@@ -8,5 +8,7 @@ class User < ApplicationRecord
   has_secure_password
 
   validates :email, presence: true, length: { minimum: 5 }, uniqueness: true
-  validates :first_name, :last_name, :patient_number, :phone_number, presence: true
+  validates :password, presence: true, length: { minimum: 5 }
+  validates :patient_number, presence: true, uniqueness: true
+  validates :first_name, :last_name, :phone_number, presence: true
 end
