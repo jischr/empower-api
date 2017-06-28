@@ -16,17 +16,20 @@ class V1::UsersController < ApplicationController
     if @user.save
       render json: @user
     else
-      # puts @user.errors.messages
       render json: {errors: @user.errors.messages}, status: :unprocessable_entity
     end
   end
 
   def update
-    @user = User.find(params[:id])
-    if @user.update(user_params)
-      render json: @user
+    if User.exists?(patient_number: params[:id])
+      @user = User.find_by_patient_number(params[:id])
+      if @user.update(user_params)
+        render json: @user
+      else
+        render json: @user.errors, status: :unprocessable_entity
+      end
     else
-      render json: @user.errors, status: :unprocessable_entity
+      render json: { error: 'Wrong Patient Number' }
     end
   end
 
