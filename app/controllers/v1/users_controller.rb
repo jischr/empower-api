@@ -9,6 +9,11 @@ class V1::UsersController < ApplicationController
     render json: @user
   end
 
+  def showscores
+    @user = User.find_by_patient_number(params[:id]).as_json(include: {scores: {only: [:score_value, :updated_at]}})
+    render json: @user
+  end
+
   def create
     @user = User.new(user_params)
     @user.password = params[:password]

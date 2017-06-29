@@ -12,4 +12,5 @@ Rails.application.routes.draw do
  # authenticate user with JWT
  post 'authenticate/user', to: 'authentication#userAuthenticate'
  post 'authenticate/clinician', to: 'authentication#clinicianAuthenticate'
+ get 'v1/users/scores/:id', to: 'v1/users#showscores'
 end
