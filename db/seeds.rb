@@ -22,9 +22,9 @@ User.create(
   phone_number: '3035889350',
   password: 'password',
   password_confirmation: 'password',
-  sex: 'F',
+  sex: 'Female',
   birth_date: '1994-01-05',
-  education: 2,
+  education: 'Associate\'s or Bachelor\'s Degree',
   clinician_id: 1
 )
 
@@ -36,9 +36,9 @@ User.create(
   phone_number: '3035889350',
   password: 'cookies',
   password_confirmation: 'cookies',
-  sex: 'F',
+  sex: 'Female',
   birth_date: '1993-9-21',
-  education: 2
+  education: 'Associate\'s or Bachelor\'s Degree'
 )
 
 Measure.create(
@@ -58,4 +58,28 @@ Alternative.create(
 Alternative.create(
   user_id: 2,
   text: 'Run a marathon'
+)
+
+Score.create(
+  user_id: 1,
+  measure_id: 1,
+  score_value: 15
+)
+
+Score.create(
+  user_id: 1,
+  measure_id: 1,
+  score_value: 10
+)
+
+Score.create(
+  user_id: 1,
+  measure_id: 1,
+  score_value: 19
+)
+
+Score.create(
+  user_id: 1,
+  measure_id: 1,
+  score_value: 12
 )
