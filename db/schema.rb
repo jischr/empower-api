@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 20170623021141) do
     t.string "patient_number"
     t.string "phone_number"
     t.date "birth_date"
-    t.integer "education"
+    t.string "education"
     t.string "sex"
     t.bigint "clinician_id"
     t.string "password_digest"

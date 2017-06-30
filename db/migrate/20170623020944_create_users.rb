@@ -7,7 +7,7 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.string :patient_number
       t.string :phone_number
       t.date :birth_date
-      t.integer :education
+      t.string :education
       t.string :sex
       t.references :clinician, foreign_key: true
       t.string :password_digest

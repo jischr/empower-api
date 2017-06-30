@@ -14,20 +14,31 @@ Clinician.create(
   password: 'password',
   password_confirmation: 'password')
 
-# User.create(
-#   first_name: 'Jennifer',
-#   last_name: 'Winer',
-#   email: 'jenniferwiner@gmail.com',
-#   patient_number: '1234',
-#   phone_number: '3035889350',
-#   password: 'password',
-#   password_confirmation: 'password',
-#   sex: 'F',
-#   birth_date:
-#   clinician_id: 1)
+User.create(
+  first_name: 'Jennifer',
+  last_name: 'Winer',
+  email: 'jennifer@me.com',
+  patient_number: '1234',
+  phone_number: '3035889350',
+  password: 'password',
+  password_confirmation: 'password',
+  sex: 'F',
+  birth_date: '1994-01-05',
+  education: 2,
+  clinician_id: 1
+)
 
-Measure.create(
-  name: 'PHQ-9'
+User.create(
+  first_name: 'Emily',
+  last_name: 'Ringoen',
+  email: 'emily@me.com',
+  patient_number: '1111',
+  phone_number: '3035889350',
+  password: 'cookies',
+  password_confirmation: 'cookies',
+  sex: 'F',
+  birth_date: '1993-9-21',
+  education: 2
 )
 
 Measure.create(
@@ -42,4 +53,9 @@ Alternative.create(
 Alternative.create(
   user_id: 1,
   text: 'Drink a cup of tea'
+)
+
+Alternative.create(
+  user_id: 2,
+  text: 'Run a marathon'
 )
