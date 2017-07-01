@@ -5,14 +5,17 @@ class TwilioController < ApplicationController
 
   def call
     begin
-      account_sid = "AC592875f15c8aa07728f754d8efd086e1" # Your Account SID from www.twilio.com/console
-      auth_token = "232fb9afaf465642c0079920bfebbc3e"   # Your Auth Token from www.twilio.com/console
+      account_sid = Rails.application.secrets.twilio_key
+      auth_token = Rails.application.secrets.twilio_secret
+
+      puts account_sid
+      puts auth_token
 
       @client = Twilio::REST::Client.new account_sid, auth_token
       @message = "Hi #{params[:user_name]}. Please take your GAD-7 Survey. http://google.com"
       message = @client.account.messages.create(:body => @message,
-      :to => params[:phone_number],    # Replace with your phone number
-      :from => "+17209438130")  # Replace with your Twilio number
+      :to => params[:phone_number],
+      :from => "+17209438130")
       render json: {  success: 'Success: The reminder SMS has been sent.' }
       puts message
     rescue Twilio::REST::RequestError => e
