@@ -22,7 +22,6 @@ gem 'jwt'
 gem 'simple_command'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'twilio-ruby'
-gem 'iron_worker_ng'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
