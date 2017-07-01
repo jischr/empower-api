@@ -9,6 +9,7 @@ class User < ApplicationRecord
 
   validates :email, presence: true, length: { minimum: 5 }, uniqueness: true
   validates :password, presence: true, length: { minimum: 5 }, on: :create
+  validates :phone_number, presence: true, length: { is: 10}, on: :create
   validates :patient_number, presence: true, uniqueness: true
-  validates :first_name, :last_name, :phone_number, :sex, :birth_date, :education, presence: true
+  validates :first_name, :last_name, :sex, :birth_date, :education, presence: true
 end
