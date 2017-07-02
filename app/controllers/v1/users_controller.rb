@@ -15,7 +15,7 @@ class V1::UsersController < ApplicationController
   end
 
   def showjournals
-    @user = User.find(params[:id]).as_json(include: {journals: {only: [:title, :content, :sentiment]}})
+    @user = User.find(params[:id]).as_json(include: {journals: {only: [:title, :content, :sentiment, :id, :created_at]}})
     render json: @user
   end
 

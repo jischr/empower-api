@@ -85,13 +85,15 @@ Score.create(
 )
 
 Journal.create(
-  user_id: 2,
+  user_id: 1,
   title: "Feeling Anxious",
-  content: "Today I have been incredibly anxious. I can't calm down! Nothing will help. I don't even know what it is that is actually making me anxious....I don't know what to do."
+  content: "Today I have been anxious. I can't calm down! Nothing will help. I don't even know what it is that is actually making me anxious....I don't know what to do.",
+  sentiment: "fa fa-frown-o sentiment-icon"
 )
 
 Journal.create(
-  user_id: 2,
+  user_id: 1,
   title: "Better Day",
-  content: "Man, today was much better. It is amazing what spending time with friends can do for my well being. I feel at peace for the first time in a long time--like I can breathe again."
+  content: "Man, today was much better. It is amazing what spending time with friends can do for my well being. I feel at peace for the first time in a long time--like I can breathe again.",
+  sentiment: "fa fa-smile-o sentiment-icon"
 )
