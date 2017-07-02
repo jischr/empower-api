@@ -3,6 +3,7 @@ class User < ApplicationRecord
 
   has_many :scores
   has_many :alternatives
+  has_many :journals
 
   #bcrypt
   has_secure_password

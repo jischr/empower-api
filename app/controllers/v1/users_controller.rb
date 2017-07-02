@@ -14,6 +14,11 @@ class V1::UsersController < ApplicationController
     render json: @user
   end
 
+  def showjournals
+    @user = User.find(params[:id]).as_json(include: {journals: {only: [:title, :content, :sentiment]}})
+    render json: @user
+  end
+
   def create
     @user = User.new(user_params)
     @user.password = params[:password]

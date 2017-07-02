@@ -83,3 +83,15 @@ Score.create(
   measure_id: 1,
   score_value: 12
 )
+
+Journal.create(
+  user_id: 2,
+  title: "Feeling Anxious",
+  content: "Today I have been incredibly anxious. I can't calm down! Nothing will help. I don't even know what it is that is actually making me anxious....I don't know what to do."
+)
+
+Journal.create(
+  user_id: 2,
+  title: "Better Day",
+  content: "Man, today was much better. It is amazing what spending time with friends can do for my well being. I feel at peace for the first time in a long time--like I can breathe again."
+)
