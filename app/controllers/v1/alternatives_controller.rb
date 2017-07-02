@@ -27,6 +27,7 @@ class V1::AlternativesController < ApplicationController
   def destroy
      @alternative = Alternative.find params[:id]
      @alternative.destroy
+     render :status
   end
 
   private
