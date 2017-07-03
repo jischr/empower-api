@@ -23,8 +23,8 @@ module Api
       allow do
         origins 'http://localhost:3001', '127.0.0.1:3001', 'https://empower-you.herokuapp.com', 'http://empower-you.herokuapp.com'
         resource '*', :headers => :any, :methods => :any
-        end
       end
+    end
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
     # Ensures JWT lib is  included

@@ -20,20 +20,6 @@ class V1::CliniciansController < ApplicationController
     end
   end
 
-  def update
-    @clinician = Clinician.find(params[:id])
-    if @clinician.update(clinician_params)
-      render json: @clinician
-    else
-      render json: @clinician.errors, status: :unprocessable_entity
-    end
-  end
-
-  def destroy
-    @clinician = Clinician.find(params[:id])
-    @clinician.delete
-  end
-
   private
 
   def clinician_params

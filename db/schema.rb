@@ -49,14 +49,6 @@ ActiveRecord::Schema.define(version: 20170702014402) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "questions", force: :cascade do |t|
-    t.bigint "measure_id"
-    t.string "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["measure_id"], name: "index_questions_on_measure_id"
-  end
-
   create_table "scores", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "measure_id"

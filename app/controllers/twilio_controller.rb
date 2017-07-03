@@ -8,11 +8,8 @@ class TwilioController < ApplicationController
       account_sid = Rails.application.secrets.twilio_key
       auth_token = Rails.application.secrets.twilio_secret
 
-      puts account_sid
-      puts auth_token
-
       @client = Twilio::REST::Client.new account_sid, auth_token
-      @message = "Hi #{params[:user_name]}. Please take your GAD-7 Survey. http://google.com"
+      @message = "Hi #{params[:user_name]}. Please take your Anxiety Survey. http://empower-you.herokuapp.com"
       message = @client.account.messages.create(:body => @message,
       :to => params[:phone_number],
       :from => "+17209438130")

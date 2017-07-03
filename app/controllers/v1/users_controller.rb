@@ -14,11 +14,6 @@ class V1::UsersController < ApplicationController
     render json: @user
   end
 
-  def showjournals
-    @user = User.find(params[:id]).as_json(include: {journals: {only: [:title, :content, :sentiment, :id, :created_at]}})
-    render json: @user
-  end
-
   def create
     @user = User.new(user_params)
     @user.password = params[:password]
@@ -42,12 +37,6 @@ class V1::UsersController < ApplicationController
       render json: { error: 'Wrong Patient Number' }
     end
   end
-
-  def destroy
-    @user = User.find(params[:id])
-    @user.delete
-  end
-
   private
 
   def user_params

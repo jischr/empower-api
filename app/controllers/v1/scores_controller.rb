@@ -2,12 +2,6 @@ class V1::ScoresController < ApplicationController
 
   skip_before_action :authenticate_request
 
-  def index
-  end
-
-  def show
-  end
-
   def create
     @score = Score.new(score_params)
 
@@ -16,9 +10,6 @@ class V1::ScoresController < ApplicationController
     else
       render json: @score.errors, status: :unprocessable_entity
     end
-  end
-
-  def destroy
   end
 
   private

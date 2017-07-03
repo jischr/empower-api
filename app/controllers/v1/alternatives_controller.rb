@@ -15,15 +15,6 @@ class V1::AlternativesController < ApplicationController
     end
   end
 
-  def update
-    @alternative = Alternative.find(params[:id])
-    if @alternative.update(alternative_params)
-      render json: @alternative
-    else
-      render :status => 400
-    end
-  end
-
   def destroy
      @alternative = Alternative.find params[:id]
      @alternative.destroy
