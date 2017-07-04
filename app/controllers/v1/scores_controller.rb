@@ -1,6 +1,6 @@
 class V1::ScoresController < ApplicationController
 
-  skip_before_action :authenticate_request
+  before_action :authenticate_request
 
   def create
     @score = Score.new(score_params)

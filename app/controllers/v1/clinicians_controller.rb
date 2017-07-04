@@ -2,7 +2,7 @@ require 'json_web_token'
 
 class V1::CliniciansController < ApplicationController
 
-  skip_before_action :authenticate_request, :includes => [:create]
+  before_action :authenticate_request, :except => [:create]
 
   def show
     @clinician = Clinician.find(params[:id]).as_json(include: {users: {only: [:first_name, :last_name, :patient_number]}},except: :password_digest)

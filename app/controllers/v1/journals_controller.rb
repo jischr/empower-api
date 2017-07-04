@@ -1,5 +1,5 @@
 class V1::JournalsController < ApplicationController
-  skip_before_action :authenticate_request
+  before_action :authenticate_request
 
   def showJournals
     @journals = Journal.where(:user_id => params[:id]).order(created_at: :desc)

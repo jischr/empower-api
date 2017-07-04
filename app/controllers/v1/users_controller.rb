@@ -2,7 +2,7 @@ require 'json_web_token'
 
 class V1::UsersController < ApplicationController
 
-  skip_before_action :authenticate_request, :includes => [:create]
+  before_action :authenticate_request, :except => [:create]
 
   def show
     @user = User.find(params[:id]).as_json(include: {alternatives: {only: [:id, :text]}}, except: :password_digest)

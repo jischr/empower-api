@@ -1,5 +1,5 @@
 class V1::AlternativesController < ApplicationController
-  skip_before_action :authenticate_request
+  before_action :authenticate_request
 
   def show
     @alternatives = User.find(params[:id]).alternatives.as_json(only: [:text, :id])

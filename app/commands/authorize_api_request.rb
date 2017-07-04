@@ -14,8 +14,13 @@ class AuthorizeApiRequest
   attr_reader :headers
 
   def user
-    @user ||= User.find(decoded_auth_token[:user_id]) if decoded_auth_token
-    @user || errors.add(:token, 'Invalid token') && nil
+    if User.where(:id => decoded_auth_token[:user_id]).present?
+      @user ||= User.find(decoded_auth_token[:user_id]) if decoded_auth_token
+      @user || errors.add(:token, 'Invalid token') && nil
+    else
+      @clinician ||= Clinician.find(decoded_auth_token[:clinician_id]) if decoded_auth_token
+      @clinician || errors.add(:token, 'Invalid token') && nil
+    end
   end
 
   def decoded_auth_token

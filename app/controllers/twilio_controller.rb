@@ -1,7 +1,7 @@
 require 'twilio-ruby'
 
 class TwilioController < ApplicationController
-  skip_before_action :authenticate_request
+  before_action :authenticate_request
 
   def call
     begin
