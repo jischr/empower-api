@@ -5,8 +5,8 @@ class TwilioController < ApplicationController
 
   def call
     begin
-      account_sid = Rails.application.secrets.twilio_key
-      auth_token = Rails.application.secrets.twilio_secret
+      account_sid = ENV['TWILIO_KEY']
+      auth_token = ENV['TWILIO_SECRET']
 
       @client = Twilio::REST::Client.new account_sid, auth_token
       @message = "Hi #{params[:user_name]}. Please take your Anxiety Survey. http://empower-you.herokuapp.com"

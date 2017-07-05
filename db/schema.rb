@@ -79,7 +79,6 @@ ActiveRecord::Schema.define(version: 20170702014402) do
 
   add_foreign_key "alternatives", "users"
   add_foreign_key "journals", "users"
-  add_foreign_key "questions", "measures"
   add_foreign_key "scores", "measures"
   add_foreign_key "scores", "users"
   add_foreign_key "users", "clinicians"
